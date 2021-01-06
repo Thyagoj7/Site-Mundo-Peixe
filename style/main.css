@@ -1,0 +1,167 @@
+:root{/* variaveis para usar cores */
+    --vermelho:#E50914;
+    --preto:#141414;
+}
+
+
+body{
+    background: white;            /*var(--preto);*/
+    font-family: 'Arial', Times, serif;
+    color: white;
+    
+}
+
+header .container{
+    display:flex;  /*coloca os elementos em flex box ou seija ficarão em linha por padrão o row do proximo parametro mesmo não pondo ele ja vem */
+    flex-direction: row;/*padrão do display flex*/
+    align-items: center;/*ALinha o elemento ao centro*/
+    justify-content:space-between;/*vai por um espaçamento entre a logo e os menus estão no mesmo container** a inumeros paramentros para ficar mudando os espaçamentos e os locais dos itens estudar mais depois */
+}
+
+header .titulo{
+    margin-left:5px;/*margin do logo em base a margem da tela*/
+    color: var(--vermelho);
+    font-family: 'Arial Black', Times;
+    font-size:40px; /* Aumenta a grossura do logo */
+}
+
+header nav a{
+    text-decoration: none; /* Vai retirar as linhas de baixo dos textos */
+    color: #AAA;     /*cor das letras */
+    margin-right: 10px; /*espaçamento entre cada menu*/
+
+}
+
+header nav a:hover{/*Evento*/
+    color:#fff; /*altera a cor do menu ao passa o ponteiro */
+}
+
+/*Elementos do filme principal*/
+.filme-principal{
+    font-size:16px;
+    
+    background: /*linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%),*/  url(../img/peixe8.jp);  /*rgba da um efeito escurecido na imagem*/
+
+    height:400px;   /**dar o tamanho da caixa para a imagem */
+    background-size:cover;/*COloca adequa a imagem ao tamanho da caixa//cover= Area de cobertura*/
+
+    display: flex;
+    flex-direction: column; /*vai inverter para modo coluna e não horizontal*/
+    justify-content: center; /*vai por os elementos no centro */
+    align-items: flex-start; /*Alinha os elementos no inicio */
+
+}
+
+
+.filme-principal .descricao{
+    margin-top: 10px;
+    margin-bottom:40px; /*margin entre o botao e o texto */
+}
+
+.filme-principal .titulo{
+    margin-top: 15%;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+}
+
+.botao{
+    background-color: rgba(0, 0, 0, .50);
+    border: none; /*borda dos botoes*/
+    color: white;
+
+    padding: 15px 30px; /*posição dos botoes*/
+    margin-right: 15px; /*espacamento entre os botoes*/
+    font-size: 12px;
+
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+
+.botao:hover{
+    background-color: white;
+    color: black;
+}
+
+.botao i{
+    margin-right: 8px;
+}
+
+
+
+.container{
+    margin-left: 30px;
+}
+
+.filme-principal .container{
+    width: 70%;     /*Altera a posição dos textos de acordo com a abertura da tela*/
+    
+
+}
+
+.box-filmes{
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.carrosel-filmes{
+    margin-top:5px;
+}
+
+.menu ul{
+    margin: 0;
+    background-color: #6da3f9; /*#3333ff;*/	/*cor do fundo do menu*/
+    list-style: none;	/* Retira os pontos ao lado dos itens do menu*/
+    width: 100%; /*largura*/
+    height: 50px;
+    box-sizing: border-box;
+    justify-content: center;
+    font-size: 16px;
+    
+}
+.menu ul li{
+    display: inline;			/* Coloca a sequencia dos itens do menu em sequencia orizontal*/
+    
+}
+.menu ul li a{
+    
+    padding: 20px 10px;			/*serve para configurar a caixa do menu sua expessura e a distancia entre os textos do menu*/
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: flex-start;
+    
+    
+
+}
+.menu ul li a:hover{			/*ação ao passar o mouse sobre um item do menu*/
+    color: #ffff00;
+
+}
+
+
+@media(max-width: 425px){
+.menu ul{
+        font-size:10px;
+        
+    }
+
+}
+
+#slider img{
+    opacity: 0;
+
+    position: absolute;
+
+    width: 100%; /*largura*/
+    height: 400px;
+    background-size:cover;
+    display: flex;
+
+    object-fit: cover;
+
+    transition: opacity 800ms;
+}
